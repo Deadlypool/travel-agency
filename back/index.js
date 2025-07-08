@@ -3,7 +3,13 @@ import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
 
-import route from "./routes/userRoute.js";
+import userRoute from "./routes/userRoute.js";
+import packageRoute from "./routes/packageRoute.js";
+import bookingRoute from "./routes/bookingRoute.js";
+import paymentRoute from "./routes/paymentRoute.js";
+import reviewRoute from "./routes/reviewRoute.js";
+import categoryRoute from "./routes/categoryRoute.js";
+import notificationRoute from "./routes/notificationRoute.js";
 
 
 const app = express();
@@ -22,4 +28,11 @@ mongoose
         })
     })
     .catch((error) => {console.log(error)})
-app.use("/user",route)
+
+app.use("/api", userRoute);
+app.use("/api", packageRoute);
+app.use("/api", bookingRoute);
+app.use("/api", paymentRoute);
+app.use("/api", reviewRoute);
+app.use("/api", categoryRoute);
+app.use("/api", notificationRoute);
