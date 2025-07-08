@@ -18,9 +18,12 @@ const packageSchema = new mongoose.Schema({
     destinations: {
         type: [String]
     },
-    categoryId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Category"
+    // categoryId: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Category"
+    // },
+    category:{
+        type: String
     },
     images: {
         type: [String]
